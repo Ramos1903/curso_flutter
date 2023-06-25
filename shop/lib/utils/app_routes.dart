@@ -1,8 +1,8 @@
-// ignore_for_file: constant_identifier_names
-
 class AppRoutes {
-  static const HOME = '/';
-  static const PRODUCT_DETAIL = '/product-detail';
-  static const CART = '/cart';
-  static const ORDERS = '/orders';
+  static const home = '/';
+  static const productDetail = '/product-detail';
+  static const cart = '/cart';
+  static const orders = '/orders';
+  static const products = '/products';
+  static const productForm = '/product-form';
 }

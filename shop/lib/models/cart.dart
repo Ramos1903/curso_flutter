@@ -1,9 +1,7 @@
 import 'dart:math';
-
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:shop/models/cart_item.dart';
 import 'package:shop/models/product.dart';
-
-import 'cart_item.dart';
 
 class Cart with ChangeNotifier {
   Map<String, CartItem> _items = {};
@@ -13,7 +11,7 @@ class Cart with ChangeNotifier {
   }
 
   int get itemsCount {
-    return _items.length;
+    return items.length;
   }
 
   double get totalAmount {
@@ -51,7 +49,12 @@ class Cart with ChangeNotifier {
     notifyListeners();
   }
 
-  void removeSingleIntem(String productId) {
+  void removeItem(String productId) {
+    _items.remove(productId);
+    notifyListeners();
+  }
+
+  void removeSingleItem(String productId) {
     if (!_items.containsKey(productId)) {
       return;
     }
@@ -70,11 +73,6 @@ class Cart with ChangeNotifier {
         ),
       );
     }
-    notifyListeners();
-  }
-
-  void removeItem(String productId) {
-    _items.remove(productId);
     notifyListeners();
   }
 
